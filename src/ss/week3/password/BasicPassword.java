@@ -4,7 +4,7 @@
  * 		public because it needs to be accessed from outside classes, it's static anyway, should be accessible.
  */
 
-package week3;
+package ss.week3.password;
 
 public class BasicPassword {
 	public static final String INITIAL = "";

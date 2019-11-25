@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"ss.week3.password","c":"Checker","l":"acceptable(String)","url":"acceptable(java.lang.String)"},{"p":"ss.week3.password","c":"Checker","l":"generatePassword()"}]
