@@ -11,7 +11,8 @@ public class Password {
 	public Password(Checker checker) {
 		this.checker = checker;
 		this.factoryPassword = this.checker.generatePassword();
-		this.word = INITIAL;
+		this.word = checker.generatePassword();
+		this.factoryPassword = this.word;
 	}
 	
 	public String getInitPass() {
@@ -23,11 +24,11 @@ public class Password {
 	}
 	
 	public boolean acceptable(String suggestion) {
-		boolean result = true;
-		if (suggestion.length() < 6 || suggestion.contains(" ")) {
-			result = false;
-		}
-		return result;
+		return checker.acceptable(suggestion);
+	}
+	
+	public Checker getChecker() {
+		return checker;
 	}
 	
 	public boolean testWord(String test) {

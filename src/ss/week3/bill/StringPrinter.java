@@ -1,7 +1,11 @@
 package ss.week3.bill;
 
 public class StringPrinter implements Printer{
-	private String collected = "";
+	private String collected;
+	
+	public StringPrinter() {
+		collected = "";
+	}
 
 	public String getResult() {
 		return collected;

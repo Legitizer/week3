@@ -7,7 +7,7 @@
 package ss.week3.password;
 
 public class BasicPassword {
-	public static final String INITIAL = "";
+	public static final String INITIAL = "default";
 	
 	private String word;
 	

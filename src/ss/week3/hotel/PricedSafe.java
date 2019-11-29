@@ -1,3 +1,5 @@
+//JAVADOC
+
 package ss.week3.hotel;
 
 import ss.week3.bill.Bill;
@@ -52,6 +54,11 @@ public class PricedSafe extends Safe implements Bill.Item{
 	@Override
 	public double getAmount() {
 		return this.amount;
+	}
+	
+	@Override
+	public String toString() {
+		return "Priced Safe";
 	}
 
 }
