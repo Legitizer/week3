@@ -30,6 +30,66 @@ public class PricedSafeTest {
     }
     
     @Test
+    public void testActivateWithWrongPass() {
+    	safe.activate("SomeWrongPassword");
+    	assertFalse(safe.isActive());
+    	assertFalse(safe.isOpen());
+    }
+    
+    @Test
+    public void testActivateWithRightPass() {
+    	safe.activate("password");
+    	assertTrue(safe.isActive());
+    	assertFalse(safe.isOpen());
+    }
+    
+    @Test
+    public void testOpenWithWrongPassWhenDeactivated() {
+    	safe.deactivate();
+    	safe.open("WrongPassword");
+    	assertFalse(safe.isActive());
+    	assertFalse(safe.isOpen());
+    }
+    
+    @Test
+    public void testOpenWithRightPassWhenDeactivated() {
+    	safe.deactivate();
+    	safe.open("password");
+    	assertFalse(safe.isActive());
+    	assertFalse(safe.isOpen());
+    }
+    
+    @Test
+    public void testOpenWhenActive() {
+    	safe.activate("password");
+    	safe.open("WrongPassword");
+    	assertFalse(safe.isOpen());
+    	
+    	safe.open("password");
+    	assertTrue(safe.isOpen());
+    	assertTrue(safe.isActive());
+    }
+    
+    @Test
+    public void testOpenAndClose() {
+    	safe.activate("password");
+    	safe.open("password");
+    	
+    	safe.close();
+    	assertTrue(safe.isActive());
+    	assertFalse(safe.isOpen());
+    }
+    
+    @Test
+    public void testCloseDeactivatedSafe() {
+    	safe.deactivate();
+    	safe.close();
+ 
+    	assertFalse(safe.isActive());
+    	assertFalse(safe.isOpen());
+    }
+    
+    @Test
     public void testIsBillItem() throws Exception {
     	assertTrue(safe instanceof Bill.Item, 
     			"safe should be an instance of Bill.Item.");

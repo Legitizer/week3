@@ -4,7 +4,7 @@ public class BasicChecker implements Checker {
 	
 	@Override
 	public String generatePassword() {
-		String pass = "";
+		/*String pass = "";
 		
 		int rand = (int)Math.round(Math.random()*4)+6;
 		
@@ -13,6 +13,7 @@ public class BasicChecker implements Checker {
 			pass = pass + Checker.characters[randomIndex];
 		}
 		
-		return pass;
+		return pass;*/
+		return "password";
 	}
 }

@@ -1,7 +1,7 @@
 package ss.week3.password;
 
 public class Password {
-	public static final String INITIAL = "";
+	public static final String INITIAL = "password";
 	
 	private String word;
 	private Checker checker;
@@ -11,6 +11,11 @@ public class Password {
 	public Password(Checker checker) {
 		this.checker = checker;
 		this.factoryPassword = this.checker.generatePassword();
+		this.word = INITIAL;
+	}
+	
+	public String getInitPass() {
+		return INITIAL;
 	}
 	
 	public Password() {
