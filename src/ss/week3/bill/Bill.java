@@ -14,6 +14,10 @@ public class Bill {
 		this.sum = 0;
 	}
 	
+	public StringPrinter getPrinter() {
+		return (StringPrinter) printer;
+	}
+	
 	public void addItem(Item item) {
 		sum = sum + item.getAmount();
 		printer.printLine(item.toString(), item.getAmount());

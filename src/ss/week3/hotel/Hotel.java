@@ -25,7 +25,7 @@ public class Hotel {
 	}
 	
 	public Bill getBill(String guest, int nNights, Printer printer) {
-		if (r1.getGuest().getName().equals(guest)) {
+		if (r1.getGuest() != null && r1.getGuest().getName().equals(guest)) {
 			Bill bill = new Bill(printer);
 			
 			for (int i = 0; i < nNights; i++) {
@@ -149,14 +149,12 @@ public class Hotel {
 	 */
 	public Room getRoom(String name) {
 		if (r1.getGuest() != null && r1.getGuest().getName().equals(name)) {
-			System.out.println(name + " has room "+r1.getNumber());
 			return r1;
 		}
 		else if (r2.getGuest() != null && r2.getGuest().getName().equals(name)) {
-			System.out.println(name + " has room "+r2.getNumber());
 			return r2;
 		}else {
-			System.out.println(name + " doesn't have a room");
+			System.out.println(name+" is not a guest at this hotel.");
 			return null;
 		}
 	}

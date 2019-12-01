@@ -16,8 +16,6 @@ public class PricedRoom extends Room implements Bill.Item{
 		return this.amount;
 	}
 	
-	
-	
 	@Override
 	public String toString() {
 		return "Room, "+getAmount()+" per night";

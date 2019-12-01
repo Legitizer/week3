@@ -18,10 +18,12 @@ public class PricedSafe extends Safe implements Bill.Item{
 		pass = new Password();
 	}
 	
-	public void activate(String pass) {
+	public boolean activate(String pass) {
 		if (this.pass.testWord(pass)) {
 			this.active = true;
+			return true;
 		}
+		return false;
 	}
 	
 	public void activate() {
